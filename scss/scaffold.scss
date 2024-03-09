@@ -1,0 +1,150 @@
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+@import "abstracts/utilities";
+@import "abstracts/split-button";
+@import "abstracts/svgicon";
+
+@import "themes/light";
+@import "themes/dark";
+
+// Base
+// --------------------------------------------------
+
+@import "base/base";
+
+$scaffold-toolbarbutton-icons: (
+		load: 'folder-open',
+		save: 'save',
+		saveToZotero: 'save-to-zotero',
+		detect: 'run-detect',
+		do: 'run-do',
+		template: 'plus'
+);
+
+@each $cls, $icon in $scaffold-toolbarbutton-icons {
+	#tb-#{$cls} {
+		@include svgicon-menu($icon, "universal", "20");
+	}
+};
+
+.menubar-container {
+	display: flex;
+	background: var(--material-sidepane);
+	border-bottom: var(--material-panedivider);
+
+	#main-menubar {
+		pointer-events: all;
+	}
+}
+
+#zotero-toolbar {
+	@media not (-moz-platform: macos) {
+		appearance: none;
+		background: var(--material-sidepane);
+	}
+	border-bottom: var(--material-panedivider);
+
+	toolbarbutton {
+		width: 28px;
+		height: 28px;
+		padding: 0 4px;
+		margin: 0 4px;
+		
+		.toolbarbutton-menu-dropmarker {
+			margin-inline-start: 4px;
+		}
+	}
+	
+	toolbarseparator {
+		appearance: none;
+		width: 1px;
+		height: 20px;
+		background-color: var(--fill-quinary);
+	}
+}
+
+tab {
+	/* toolkit/themes/osx/global/tabbox.css sets selected tabs' text color to #FFF, which is incorrect */
+	color: initial !important;
+}
+
+#metadata-grid {
+	-moz-box-flex: 1;
+	display: grid;
+	align-content: start;
+	align-items: center;
+	grid-template-columns: max-content 1fr;
+}
+
+#metadata-grid > label:nth-child(2n + 1) {
+	justify-self: right;
+}
+
+.button-row {
+	display: grid;
+	grid-template-columns: 1fr max-content;
+}
+
+#metadata-bottom-row {
+	display: flex;
+	align-items: center;
+}
+
+#metadata-bottom-row #textbox-minVersion {
+	margin-right: auto;
+}
+
+#hbox-testFrame {
+	-moz-box-align: center;
+}
+
+#output {
+	height:200px;
+	background: var(--material-background);
+}
+
+richlistbox {
+	min-width:200px;
+}
+
+#zotero-toolbar toolbarseparator {
+	height: 18px;
+}
+
+browser,
+#appcontent
+{
+	background: var(--material-toolbar);
+}
+
+#appcontent {
+	padding: 16px;
+}
+
+vbox > splitter {
+	cursor: row-rgb(4, 4, 4)e;
+}
+
+#left-tabbox {
+	margin: 5px;
+}
+
+#checkboxes-translatorType checkbox {
+	margin-right: 10px;
+	display: inline-block;
+}
+
+#tabpanel-metadata label:first-child {
+	text-align: right;
+}
+
+#right-pane {
+	margin: -16px -16px -16px 0px;
+	border-left: var(--material-panedivider);
+	textarea {
+		outline: none;
+		border: 0;
+	}
+}

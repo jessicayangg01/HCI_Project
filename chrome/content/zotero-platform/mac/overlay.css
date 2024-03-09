@@ -1,0 +1,48 @@
+#zotero-items-toolbar[state=collapsed]
+{
+	margin-inline-start: -8px !important;
+}
+
+#zotero-pane toolbarseparator {
+	margin-inline-start: 7px;
+}
+
+#zotero-tb-sync > .toolbarbutton-icon {
+	-moz-binding: none !important;
+}
+
+.zotero-item-pane-content .groupbox-body {
+	-moz-appearance: none;
+	background-color: #ffffff;
+}
+
+#zotero-item-pane-message-box description {
+	color: #7f7f7f;
+}
+
+/* How to get active twisty?
+treechildren::-moz-tree-twisty(active) {
+	-moz-appearance: none;
+	list-style-image: url("chrome://zotero/skin/mac/twisty-active.svg") !important;
+}
+
+treechilren::-moz-tree-twisty(active) {
+	-moz-appearance: none;
+	list-style-image: url("chrome://zotero/skin/mac/twisty-active-open.svg");
+}
+*/
+
+tree:focus treechildren::-moz-tree-twisty(selected) {
+	-moz-appearance: none;
+	list-style-image: url("chrome://zotero/skin/mac/twisty-selected.svg");
+}
+
+tree:focus treechildren::-moz-tree-twisty(selected, open) {
+	-moz-appearance: none;
+	list-style-image: url("chrome://zotero/skin/mac/twisty-selected-open.svg");
+}
+
+treechildren::-moz-tree-image {
+	height: 16px;
+	padding-bottom: 1px;
+}

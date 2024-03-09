@@ -1,0 +1,33 @@
+#style-listbox
+{
+	height: 14rem;
+	width: 325pt;
+}
+
+#manage-styles {
+	text-decoration: none;
+}
+
+#locale-box h2 {
+	font-size: 14px;
+}
+
+radio:not(:first-child)
+{
+	margin-top: .5em;
+}
+
+.radioDescription
+{
+	margin: 0 0 3px 20px;
+	font-size: .85em;
+}
+
+
+#automaticJournalAbbreviations-vbox, #advanced-settings {
+	padding: 0 14px;
+}
+
+#advanced-settings > * {
+	margin-bottom: 10px;
+}
